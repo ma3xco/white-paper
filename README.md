@@ -35,31 +35,48 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
 
 ### Solution Overview
 - What type of wallet is Matrix: non-custodial smart account (AA/4337), EOA, hybrid, or custodial?
-  - EOA, since SmartAccounts and 4337 are new and not fully supported by other platfroms, Matrix Wallet started with the EOA approch, so users have enoph confidence that they own the key and they have full controll while we provided cutting eadge features like gas-sponsor and send by gmail on the same EOA wallet.
-  - Matrix Wallet is published on Google Play and Apple Store, so users can easly install it from trusted sorce without any confution or sicurity risks.
-  - Updates will be published on the same approch. and consist of new features and minor fixes if there is any.
-  - Also our support team, cover 24/7 chat and email support for our customers, and MTX holders have a priority rather than the others.
+  - EOA (externally owned account). ERC‑4337 smart accounts are promising but still unevenly supported across chains and dApps; we start with EOA to maximize compatibility and user confidence in key ownership while still delivering features like gas sponsorship and Gmail‑based sending.
+  - Distributed via official stores (Google Play and Apple App Store) to ensure a trusted install path.
+  - Regular updates deliver new features and fixes through the same channels.
+  - 24/7 support via chat and email; MTX holders receive priority routing.
   - Hints: Tradeoffs (UX vs. trust); upgradeability; standards supported; compliance impact.
 - How do users onboard (email/social signup, OAuth with Google, seedless, social recovery)?
-  - Users onboard only using their gmail TODO Kolang.
+  - One‑tap onboarding with Google or Apple sign‑in. After OAuth, the wallet is ready to use.
+  - Optional email‑based identity linking to enable Gmail send; seedless UX with secure device binding.
   - Hints: Step-by-step flow; fallback paths; recovery setup defaults; bot/Sybil defenses.
 - What makes the UI “grandparent-simple” (flows, language, defaults, accessibility)?
+  - Plain‑language copy, minimal steps, and safe defaults to prevent mistakes.
+  - Fiat display in preferred currencies (e.g., EUR, JPY) and multi‑language support.
+  - Accessibility: large touch targets, high contrast, and WCAG‑aligned patterns.
   - Hints: Plain language; safe defaults; large touch targets; WCAG; cognitive load.
 - How does “gas sponsored transfer” work at a high level (who pays, limits, eligibility)?
+  - Policy‑based sponsorship: in some cases we fully sponsor transactions; in others the user pays fees from held tokens (e.g., USDT) instead of native gas. The goal is to make sending cheaper and simpler than acquiring native tokens, often below standard network fees on certain chains.
   - Hints: Funding source; per-user caps; eligible tx types; abuse prevention; reporting.
 - How does “send using Gmail” work conceptually (identity mapping, verification, privacy)?
+  - Available to registered users who opt‑in via OAuth. Users can resolve a Gmail identity to the recipient’s wallet address. Daily/monthly limits apply; suspicious activity triggers enhanced checks or account restrictions. Privacy and consent are respected per policy.
   - Hints: OAuth scopes/consent; email↔address mapping; recipient claim UX; data privacy.
 - What core banking-like features are included at launch (send/receive, swap, earn, borrow)?
+  - Launch focus: send/receive (address and Gmail), swap, earn, and borrow/loan.
+  - Priorities: easy access, strong safety, and reliable performance for daily use.
   - Hints: MVP vs. later; dependencies; jurisdictional restrictions; disclosures.
 - Which chains/networks and assets are supported initially vs. later?
+  - Phase 1: Bitcoin, Ethereum, BNB Chain, Solana, and Tron. Additional networks prioritized by user demand.
+  - Focus on transfers, swaps, lending/borrowing, and staking, with emphasis on stablecoins (USDT/USDC) and major assets (BTC/ETH). Deposits may serve as collateral for borrowing stablecoins when available.
   - Hints: Rationale for choices; bridging approach; roadmap milestones.
 - What’s your trust model and key security guarantees to users?
+  - Non‑custodial EOA: private keys are encrypted with a user passphrase; application code cannot access plaintext keys. Your keys, your funds.
+  - User‑controlled lock/unlock settings and session timeouts.
   - Hints: Non-custodial stance; third-party reliance; incident response commitments.
 - How are approvals/allowances handled to minimize risk and simplify UX?
+  - User‑selectable scopes: one‑time approvals, limited allowances, or broader allowances where appropriate; clear revoke flows and proactive alerts.
   - Hints: One-time vs. unlimited defaults; revoke flow; proactive alerts; education.
 - What is the multi-device experience (sessions, sync, recovery across devices)?
+  - Single‑active‑device by default for safety, with secure cloud sync enabling recovery on a new device. Passphrase encryption protects keys on a lost device; users can rotate keys and migrate assets after re‑provisioning.
   - Hints: Device binding; session revocation; key sync; lost device recovery.
 - What support/operations guarantees exist (SLA, incident status, transparency)?
+  - 24/7 monitoring and on‑call coverage across backend, infrastructure, and app.
+  - External audits supplemented by continuous in‑house red‑teaming.
+  - Incident response runbooks, public status page, and post‑incident reports.
   - Hints: Channels/hours; response SLAs; status page; postmortems cadence.
 
 ### Solution Details — Technical Specification
