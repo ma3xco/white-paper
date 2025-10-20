@@ -5,6 +5,8 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
 - What single sentence best describes Matrix Wallet’s core value for mass adoption?
   - Hints: One crisp promise; who it's for; key differentiator vs. existing wallets.
 - Who is the primary audience (first-time users, Web3 natives, SMEs, remittance users)?
+  - I dont know the exact word for this, our primary audiance are every person, we want to get mass adoption. 
+    I 
   - Hints: Segments, geographies, devices, income bands, compliance needs.
 - What problem do you solve better than existing wallets/banks (onboarding, UX, gas, security)?
   - Hints: Quantify friction today (steps/time/cost); name the top 3 pain points you remove.
@@ -204,19 +206,32 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
   - Hints: Percentages; cliffs/vesting; lockups; alignment.
 
 ### MTX Token — On Ethereum with Total Supply and Decimals
-- Chain(s) and token standard (ERC‑20, extensions), symbol, decimals.
-  - Hints: Exact params; EIPs used; audit status.
-- Total supply and mint/burn policy (capped? deflationary mechanisms?).
-  - Hints: Numbers; mint rights; burn rules; on-chain enforcement.
-- Contract roles (owner, pauser, minter), upgradeability (proxy?).
-  - Hints: Role holders (multisig?); timelocks; upgradability risks.
-- Deployer, multisig setup, key management, timelocks.
-  - Hints: Signers; thresholds; custody provider; rotation.
+- ✓ Chain(s) and token standard (ERC‑20, extensions), symbol, decimals.
+  - Symbol: MTX
+  - Type: ERC-20, Permit, Ownable, Upgradable, 
+  - Network: Ethereum
+  - Decimals: 9 ? (6,8,9,12,18)
+- ✓ Total supply and mint/burn policy (capped? deflationary mechanisms?).
+  - Total Supply : 13M 
+  - mint and burn is reserved for multichain and bridge support.
+- ✓ Contract roles (owner, pauser, minter), upgradeability (proxy?).
+  - Proxied ( upgradable )
+  - Pusable in the case of emergency. 
+  - Ownable, Ownership will moved to DAO Once more than 50% token released and circulating.
+  - Minters will be set by owner if required for bridge or multichain token.
+  - Permit + Authorized transfer + Authorized Transfer + sponsor fee.
+  - Transfer Hook for flexiable AML
+  - Owner : Multisig Wallet with 2/3 signature for executing.
+- ✓ Deployer, multisig setup, key management, timelocks.
+  - Owner will be multisig wallet, after deployment the Ownership will transfer to multisig wallet.
+  - Owner Multisig have 1D treshold for execution. 
 - Audits and renunciation plans.
-  - Hints: Firms; timelines; partial/complete renounce plan.
+  - Will audit by Helborn Team.
+  - Bug bounty program
 
 ### MTX Token — Utility
 - Concrete utilities at launch (fee discounts, gas sponsorship access, premium features).
+  - Gas Sponsorship with Zero Fee for MTX Stakers based on amount and duration.
   - Hints: Exact benefits; thresholds; UI entitlements.
 - Staking utility (governance power, revenue share eligibility, priority support).
   - Hints: Requirements; lockups; yields; risks.
