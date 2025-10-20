@@ -2,22 +2,28 @@
 Answer directly under each section (brief bullets are fine). Once filled, we will convert this into the first full draft.
 
 ### Abstract
-- What single sentence best describes Matrix Wallet’s core value for mass adoption?
-  - Hints: One crisp promise; who it's for; key differentiator vs. existing wallets.
+- What single sentence best describes Matrix Wallet's core value for mass adoption?
+  - "Simplicity is our DNA"
 - Who is the primary audience (first-time users, Web3 natives, SMEs, remittance users)?
-  - I dont know the exact word for this, our primary audiance are every person, we want to get mass adoption. 
-    I 
-  - Hints: Segments, geographies, devices, income bands, compliance needs.
+  - Our primary target audience is the general public, including both newcomers and experienced users. We aim for mass adoption across all user segments - from first-time crypto users to Web3 natives, small businesses, and remittance users.
 - What problem do you solve better than existing wallets/banks (onboarding, UX, gas, security)?
-  - Hints: Quantify friction today (steps/time/cost); name the top 3 pain points you remove.
-- What are the 3–5 flagship features that make it “a decentralized bank for everyone”?
-  - Hints: Tie features to outcomes; note what’s novel vs. table stakes; launch readiness.
+  - **Minimal Complexity**: Eliminate overwhelming technical barriers that prevent mainstream users from entering crypto
+  - **High Security**: Enterprise-grade security without compromising user experience  
+  - **Gas-Free Operations**: Users don't need native tokens for transactions on any supported network
+  - **Gmail Integration**: Send crypto directly to Gmail addresses, making it as simple as sending an email
+  - **Social Recovery**: Secure wallet recovery through trusted social links like Google and Apple
+- What are the 3–5 flagship features that make it "a decentralized bank for everyone"?
+  1. **One-Tap Onboarding**: Google/Apple sign-in with instant wallet creation
+  2. **Gas-Sponsored Transactions**: No need for native tokens on any network
+  3. **Gmail Sending**: Send crypto to email addresses
+  4. **Social Recovery**: Secure wallet recovery through social authentication
+  5. **Multi-Chain Support**: Seamless experience across Bitcoin, Ethereum, Tron, Solana, and BNB Chain
 - What measurable outcomes do you aim for (e.g., 5M users, <$0.05 effective tx cost, NPS)?
-  - Hints: Targets and timeframes; core metrics (MAU, retention, CSAT); baselines.
+  - **Target**: 100 million monthly active users by end of 2026
 - What is the core economic model in one sentence (MTX role, revenue, distribution)?
   - Hints: Revenue sources, MTX utility, how value accrues and distributes; sustainability.
 - What chains and assets are supported at launch?
-  - Hints: Initial chains/L2s; stablecoins; token standards; expansion plan.
+  - Bitcoin, Ethereum, Tron, Solana, and BNB Chain at launch, with additional networks added based on user demand.
 
 - TODO Diagram: Product overview (users, mobile app, relayer/paymaster, networks).
 
