@@ -208,99 +208,90 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
 ### MTX Token — On Ethereum with Total Supply and Decimals
 - ✓ Chain(s) and token standard (ERC‑20, extensions), symbol, decimals.
   - Symbol: MTX
-  - Type: ERC-20, Permit, Ownable, Upgradable, 
-  - Network: Ethereum
-  - Decimals: 9 ? (6,8,9,12,18)
+  - Network: Ethereum mainnet (L1) at launch; L2/multichain expansion considered post‑launch.
+  - Standard: ERC‑20 with EIP‑2612 Permit; Ownable; upgradeable via proxy pattern.
+  - Decimals: TBD (evaluating 9 vs. 18; defaulting to 18 unless strong UX/cost rationale for 9).
 - ✓ Total supply and mint/burn policy (capped? deflationary mechanisms?).
-  - Total Supply : 13M 
-  - mint and burn is reserved for multichain and bridge support.
+  - Total supply: 13,000,000 MTX (fixed cap).
+  - Mint/burn: disabled for emissions; reserved solely for bridging/canonical multichain support under governance‑controlled minter roles.
 - ✓ Contract roles (owner, pauser, minter), upgradeability (proxy?).
-  - Proxied ( upgradable )
-  - Pusable in the case of emergency. 
-  - Ownable, Ownership will moved to DAO Once more than 50% token released and circulating.
-  - Minters will be set by owner if required for bridge or multichain token.
-  - Permit + Authorized transfer + Authorized Transfer + sponsor fee.
-  - Transfer Hook for flexiable AML
-  - Owner : Multisig Wallet with 2/3 signature for executing.
+  - Upgradeability: proxy‑based with time‑locked upgrades.
+  - Pause: circuit breaker (pausable) for emergencies.
+  - Ownership: initially a 2‑of‑3 multisig; transfers to DAO once >50% of supply is circulating.
+  - Minter roles: disabled by default; may be granted to bridge contracts for multichain support.
+  - Permit/sponsored fees: EIP‑2612 Permit; sponsored fees handled at the app/paymaster layer.
+  - Transfer hook: optional on‑transfer checks to support compliance/AML policies (configurable).
+  - Owner multisig: 2/3 signatures; 24‑hour timelock on privileged actions.
 - ✓ Deployer, multisig setup, key management, timelocks.
-  - Owner will be multisig wallet, after deployment the Ownership will transfer to multisig wallet.
-  - Owner Multisig have 1D treshold for execution. 
+  - Post‑deploy, ownership transfers to the multisig; signer rotation and hardware key custody policies defined.
+  - Multisig policies include a 24‑hour timelock on privileged actions.
 - ✓ Audits and renunciation plans.
-  - Will audit by Helborn Team.
-  - Bug bounty program
+  - Third‑party audit by Halborn (or comparable tier‑1 firm) prior to launch.
+  - Public bug bounty program; phased privilege reduction and potential partial renounce after DAO transition.
 
 ### MTX Token — Utility
 - Concrete utilities at launch (fee discounts, gas sponsorship access, premium features).
-  - Gas Sponsorship with Zero Fee for MTX Stakers based on amount and duration.
+  - Gas sponsorship privileges for MTX stakers; higher caps and lower/zero service fees based on staked amount and lock duration.
   - Hints: Exact benefits; thresholds; UI entitlements.
 - ✓ Staking utility (governance power, revenue share eligibility, priority support).
-  - Staking MTX results in Staking Reward in MTX, which are buy backed by Gas Sponsor Revenue, wich results in sustainable revenue.
-  - Gas Sponsorship Priority: when the liquidity of gas sponsorship is limited.
-  - Voting Power once the 50% tokens released and Ownership transfered to DAO.
+  - Staking yields: rewards paid in MTX, economically supported by gas sponsor revenues; program targets sustainability over dilution.
+  - Priority access: stakers receive priority gas sponsorship during liquidity constraints.
+  - Governance: voting power activates after >50% circulating and DAO governance is live.
 - ✓ Governance scope (treasury, paymaster policy, listings, risk controls).
-  - Governance will have full power of platform once the Ownership Tranfer to DAO, all paramaters will be Governanced including upgrade authorizity.
+  - Upon DAO transition, governance controls treasury, paymaster policies, listings, risk parameters, and upgrade approvals within defined guardrails.
 - In-app incentives (referrals, cashbacks, quests) funded by what pool.
-  - N/A at the moment
+  - None at launch; may be proposed via governance.
   - Hints: Budget; emission rate; abuse prevention; sunset criteria.
 - ✓ Does MTX unlock higher gas sponsor caps or earn/borrow benefits?
-  - MTX unlock prirority for Gas Sponsorship, since there is dedicated liquidity for MTX Stakers for GasSponsip will less fee.
+  - MTX staking unlocks higher gas sponsor caps and discounted rates via a dedicated staker pool.
 
 ### MTX Token — Tokenomics
 - ✓ Initial liquidity:
-  - Confirm: 1% of supply deposited to DEX at $0.50 initial price. in Uniswap V4 on Etherum. 
-    - Fee tier : 0.3%
-    - Initial Pair: MTX|USDC or MTX|USDT Full Range, locked.
+  - Confirm: 1% of supply deposited to DEX at $0.50 initial price on Uniswap v4 (Ethereum).
+    - Fee tier: 0.30%; full‑range position; LP tokens locked.
+    - Pair: MTX/USDC or MTX/USDT (final selection at deployment based on liquidity depth).
   - Initial market cap and FDV implications.
-    - Total Supply is constatns and Market Cap is only depends on Price. Initial Market Cap $6.5M.
-    - Max Circulating Supply is 1% + days*%0.3
-    - While Minimum Circulating Suply can be 1%,
-    - in each epoch, the CEO might refreze the relased MTXs. the realased MTX will spends on Operational Expences and Pump resistancing, while the insurance Account will be used for dump resistancing. this mechanism garantee, a constant sustanable grow of token.
+    - Fixed supply: 13M MTX; initial circulating ~1% → initial market cap ≈ $6.5M at $0.50.
+    - Max circulating after d days: 1% + 0.3% × d (subject to refreeze policy below).
+    - Refreeze policy: Foundation may refreeze unlocked tokens to smooth supply and support market health; operations funded transparently from unlocked amounts.
 - ✓ Emissions/unlock:
   - Confirm: daily 0.3% of total supply “unfrozen” to Matrix Foundation.
-    - Yes, It's Onchain Schechule. No Cliff, Infinite Vesting, since the Fundation might refreeze all assets. minium vesting is 333 days.
-    - It can be validated onchain, using transaction and Smart Contract source.
+    - On‑chain schedule; no cliff. Minimum effective vesting horizon ≈ 333 days at 0.3%/day.
+    - Publicly verifiable via contract state and on‑chain transactions.
     - Hints: On-chain schedule; cliff?; how displayed to public.
   - Define “freeze/refreeze” mechanics (on-chain vesting? timelock? CEO discretion boundaries?).
-    - Freeze and Refreeze mechanism is fully onchain, while the CEO have the full power of unlocked amount. to garantee system growth, CEO needs enoght Power and flexibility to lead the Project to success. and since the market situation is variating, the CEO needs to take action based on ongoing situation.
+    - Freeze/refreeze fully on‑chain. Discretion exercised within published policy; governance oversight and periodic reporting ensure accountability.
     - Hints: Controls; governance oversight; transparency rules.
   - Clear policy for selling to fund ops vs. refreezing; transparency and reporting cadence.
-    - Selling or buying MTX will hapen onchain and fully transparent. 
-    - Annoal reports might be available for Fundation expences and Revenue.
+    - All sales/buys executed on‑chain (transparent). Monthly/quarterly reports disclose unlocks, sales, refreezes, and treasury balances.
     - Hints: Triggers; ceilings; monthly reports; wallet disclosures.
 - ✓ Allocations:
   - Foundation, ecosystem, community, team, advisors, market making, reserves.
-    - 1% initial LP for Dex, 
-    - the rest is reserved and will be unlocked minimum 1year based on echosystem benefit. No Airdrop, No Team,
-    - Our Primary Obejective is lead the Platform to success, and we respect our cummunity whom payed for MTX token by not having Airdrop or Team allocation. 
-    - for any marketing use cases the CEO will buy MTX from the DEX itself using Company Capital and can use that MTX as Company deside. No Unfair Allocation.
-    - Market Making will happen onchain, using unlocked ammount for Pump resistance and insurance and Comapny Capital for Dump desistance. 
-    - the Revenue of Market Making will remain in the Company Capital and can be use to increase the Price sustanly, or increase the Market Depth.
+    - 1% initial LP; remainder held by Foundation and subject to the daily unlock policy.
+    - No team or airdrop allocations at launch; any marketing allocations purchased on‑market using company capital to avoid preferential distributions.
+    - Market‑making: on‑chain liquidity operations using unlocked amounts for stabilization and insurance; profits accrue to company capital to deepen liquidity or extend runway.
     - Hints: Percentages; lockups; purpose per bucket.
   - Vesting cliffs/schedules; anti-dump protections; lockups for insiders.
-    - Comapny will monitor the Market and Identify the Indiser traders powering by AI and Proffessional Financial Experts. once any dangrus activity tracked, the account will be freezed, our support team will cover the account to refund and revert the transactions with small penalty for the first time. 
-    the penalty increases for that account if it happens more.
+    - Anti‑dump measures focus on transparent refreeze capability and liquidity management; monitoring for market manipulation with proportionate responses consistent with decentralization and user rights.
     - Hints: Timelines; transfer restrictions; enforcement.
 - ✓ Treasury and reserves:
   - Insurance account vs. profit account definitions, controls, signers, auditability.
-    - All the Revenue of System splited into 2 account, 50% Insurance Account, 50% ProfitAccount.
-    - the Insurance Account will only be used for dump resistance and buy backing the MTX token,
-    - While the ProfitAccount can be used for Operational expences, Staking Rewards MTX buy backing, Market Making, or etc. 
+    - Revenues split: 50% Insurance Account (market stabilization/buybacks), 50% Profit Account (operations, staking rewards support, market‑making, growth).
     - Hints: Multisig details; access policy; public dashboards.
 - ✓ Staking and rewards:
   - Reward source (revenue share vs. emissions), distribution frequency (block/weekly/monthly).
-    - Staking reward distribution happening monthly. it might be based on MTX token, or Stable tokens like USDT or USDC. 
-    - Staking Rewards is also depends on Amount and Duration, 
-    - the Mathematics formula of Staking reward will be included here. TODO: @Harpy-wings
+    - Monthly distributions; paid in MTX and/or stablecoins (USDC/USDT) depending on treasury composition.
+    - Rewards scale with staked amount and lock duration; formula to be published.
     - Hints: Split ratios; schedule; auto-compound; gas costs.
   - Eligibility (stakers only vs. all holders), snapshot mechanism, slashing conditions if any.
-    - Min Stake: 100 MTX, ( 0.0008% total Supply and 0.077% of initial LP )
+    - Minimum stake: 100 MTX (≈0.0008% of supply; ≈0.077% of initial LP float).
 - ✓ Buybacks and burns:
   - Triggers (revenue thresholds, governance votes), execution rules.
-    - Buybacking is execute based on CEO desigen and market situation.
+    - Buybacks executed opportunistically based on treasury health and market conditions; rules codified in treasury policy and reported transparently.
     - Hints: Conditions; execution venues; transparency.
 - ✓ Compliance:
   - Security vs. utility token stance, jurisdictions, offering status, KYC requirements.
-    - While using Matrix Wallet and Staking MTX token is not required any KYC since it's trully decentrilized, in the case of fard or inside treading activity, the KYC is required before we unfreeze the account, to grantee the MTX economy safety and healthy.
+    - Wallet usage and staking do not require KYC by default. In cases of suspected fraud/abuse related to sponsored services or treasury interactions, enhanced verification may be requested to protect the ecosystem.
     - Hints: Legal opinions (if any); countries included/excluded; investor eligibility.
 
 
