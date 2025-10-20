@@ -225,7 +225,7 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
 - ✓ Deployer, multisig setup, key management, timelocks.
   - Owner will be multisig wallet, after deployment the Ownership will transfer to multisig wallet.
   - Owner Multisig have 1D treshold for execution. 
-- Audits and renunciation plans.
+- ✓ Audits and renunciation plans.
   - Will audit by Helborn Team.
   - Bug bounty program
 
@@ -233,27 +233,39 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
 - Concrete utilities at launch (fee discounts, gas sponsorship access, premium features).
   - Gas Sponsorship with Zero Fee for MTX Stakers based on amount and duration.
   - Hints: Exact benefits; thresholds; UI entitlements.
-- Staking utility (governance power, revenue share eligibility, priority support).
-  - Hints: Requirements; lockups; yields; risks.
-- Governance scope (treasury, paymaster policy, listings, risk controls).
-  - Hints: What can/can’t be changed; quorum/thresholds; voter eligibility.
+- ✓ Staking utility (governance power, revenue share eligibility, priority support).
+  - Staking MTX results in Staking Reward in MTX, which are buy backed by Gas Sponsor Revenue, wich results in sustainable revenue.
+  - Gas Sponsorship Priority: when the liquidity of gas sponsorship is limited.
+  - Voting Power once the 50% tokens released and Ownership transfered to DAO.
+- ✓ Governance scope (treasury, paymaster policy, listings, risk controls).
+  - Governance will have full power of platform once the Ownership Tranfer to DAO, all paramaters will be Governanced including upgrade authorizity.
 - In-app incentives (referrals, cashbacks, quests) funded by what pool.
+  - N/A at the moment
   - Hints: Budget; emission rate; abuse prevention; sunset criteria.
-- Does MTX unlock higher gas sponsor caps or earn/borrow benefits?
-  - Hints: Tiers; examples; caps; fairness.
+- ✓ Does MTX unlock higher gas sponsor caps or earn/borrow benefits?
+  - MTX unlock prirority for Gas Sponsorship, since there is dedicated liquidity for MTX Stakers for GasSponsip will less fee.
 
 ### MTX Token — Tokenomics
-- Initial liquidity:
-  - Confirm: 1% of supply deposited to DEX at $0.50 initial price. Which DEX/pool params?
-    - Hints: DEX/pair; initial liquidity USD; fee tier; price range; lock.
+- ✓ Initial liquidity:
+  - Confirm: 1% of supply deposited to DEX at $0.50 initial price. in Uniswap V4 on Etherum. 
+    - Fee tier : 0.3%
+    - Initial Pair: MTX|USDC or MTX|USDT Full Range, locked.
   - Initial market cap and FDV implications.
-    - Hints: Circulating vs. FDV math; narratives; comparison set.
-- Emissions/unlock:
+    - Total Supply is constatns and Market Cap is only depends on Price. Initial Market Cap $6.5M.
+    - Max Circulating Supply is 1% + days*%0.3
+    - While Minimum Circulating Suply can be 1%,
+    - in each epoch, the CEO might refreze the relased MTXs. the realased MTX will spends on Operational Expences and Pump resistancing, while the insurance Account will be used for dump resistancing. this mechanism garantee, a constant sustanable grow of token.
+- ✓ Emissions/unlock:
   - Confirm: daily 0.3% of total supply “unfrozen” to Matrix Foundation.
+    - Yes, It's Onchain Schechule. No Cliff, Infinite Vesting, since the Fundation might refreeze all assets. minium vesting is 333 days.
+    - It can be validated onchain, using transaction and Smart Contract source.
     - Hints: On-chain schedule; cliff?; how displayed to public.
   - Define “freeze/refreeze” mechanics (on-chain vesting? timelock? CEO discretion boundaries?).
+    - Freeze and Refreeze mechanism is fully onchain, while the CEO have the full power of unlocked amount. to garantee system growth, CEO needs enoght Power and flexibility to lead the Project to success. and since the market situation is variating, the CEO needs to take action based on ongoing situation.
     - Hints: Controls; governance oversight; transparency rules.
   - Clear policy for selling to fund ops vs. refreezing; transparency and reporting cadence.
+    - Selling or buying MTX will hapen onchain and fully transparent. 
+    - Annoal reports might be available for Fundation expences and Revenue.
     - Hints: Triggers; ceilings; monthly reports; wallet disclosures.
 - Allocations:
   - Foundation, ecosystem, community, team, advisors, market making, reserves.
