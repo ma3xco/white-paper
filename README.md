@@ -19,6 +19,8 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
 - What chains and assets are supported at launch?
   - Hints: Initial chains/L2s; stablecoins; token standards; expansion plan.
 
+- TODO Diagram: Product overview (users, mobile app, relayer/paymaster, networks).
+
 ### Introduction & Problem Statement
 - What specific frictions block mass adoption today (seed phrases, fees, volatility, scams)?
   - Hints: Concrete examples; quantify drop-offs; risk and trust barriers for newcomers.
@@ -32,6 +34,8 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
   - Hints: KYC/AML, sanctions, classification risks, disclosures, regional considerations.
 - What success criteria define “solved” (time to first transaction, cost, support responsiveness)?
   - Hints: Time-to-first-send, activation rate, support SLA, complaint rate.
+
+- TODO Chart: Adoption funnel (onboard → first send → week 4 retention) and top pain points.
 
 ### Solution Overview
 - What type of wallet is Matrix: non-custodial smart account (AA/4337), EOA, hybrid, or custodial?
@@ -87,11 +91,14 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
     - Hints: Thresholds/shares; backup strategy; guardian rules; device provisioning.
   - Recovery flows and anti-phishing mechanisms.
     - Hints: Time-locks; multi-factor confirmations; phishing education; usability tests.
+  - TODO Diagram: Account/recovery architecture (keys, guardians, time-locks, sessions).
 - Gas sponsorship:
   - Sponsorship policy (per-user caps, whitelists, geos), fraud prevention, abuse limits.
     - Hints: Caps/eligibility; Sybil detection; geo policy; logging and rate limits.
   - Who funds it (treasury, MTX staking pool)? Budgeting and monitoring.
     - Hints: Budget ceilings; on/off switch; reporting frequency; governance levers.
+  - TODO Sequence Diagram: Sponsored tx path and paymaster authorization.
+  - TODO Table: Sponsorship tiers vs. caps/fees.
 - Send using Gmail:
   - Identity resolution (email ↔ address mapping), verification (OAuth scope), consent UI.
     - Hints: Scopes needed; consent wording; uniqueness handling; opt-out/revoke.
@@ -99,16 +106,20 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
     - Hints: Change detection; secure remapping; audit trails; retention windows.
   - Delivery UX for recipients without wallets (claim flow, expiration, fallback).
     - Hints: Gasless claim; expiry; re-route funds; custodial fallback policy.
+  - TODO Sequence Diagram: Email/handle resolution and claim process.
+  - TODO ERD: Identity/contact mapping and retention policy.
 - Payments and transfers:
   - Supported token standards, stablecoins, fiat on/off-ramps, compliance checks (sanctions).
     - Hints: Initial stablecoins; partners for on/off-ramp; screening provider; limits.
   - Cross-chain strategy (bridges, messaging, risks).
     - Hints: Chosen bridges; risk disclosures; fallback routes; insurance/escrow.
+  - TODO Flowchart: Cross-chain transfer and compliance screening.
 - Swap:
   - Aggregator(s) (0x, 1inch, Paraswap), routing, MEV protection, slippage controls.
     - Hints: Aggregators used; private orderflow; max slippage; simulation and quotes.
   - Fees/spreads and who receives them.
     - Hints: Fee schedule; recipients (treasury/MTX); disclosure in UI.
+  - TODO Sequence Diagram: Swap routing via aggregator with MEV protection.
 - Earn and borrow:
   - Integrated protocols (Aave/Compound/Lido/etc.) vs. native offerings.
     - Hints: Whitelisting criteria; audits; custody of assets; oracle dependencies.
@@ -116,32 +127,42 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
     - Hints: APY computation; variable vs. fixed; risk tiers; disclaimers.
   - Liquidation policies, warnings, notifications.
     - Hints: Health factor thresholds; alert channels; protective defaults.
+  - TODO Flowchart: Borrow lifecycle and liquidation.
+  - TODO Matrix: Risk tiers vs. protocols and assets.
 - dApp explorer/hub:
   - Curation criteria, security scoring, permissions sandboxing, phishing detection.
     - Hints: Listing policy; security scans; takedown process; user reporting.
   - In-app browser vs. deep integrations, wallet permissions review/limits.
     - Hints: Permission prompts; per-dapp limits; session reviews.
+  - TODO Flowchart: dApp permission request and review.
 - Infrastructure:
   - Node providers, indexers, relayers, bundlers, analytics, error tracking.
     - Hints: Redundancy; SLAs; vendor diversity; observability stack.
   - Availability targets, redundancy, incident response.
     - Hints: SLOs/targets; failover plans; drills and RTO/RPO.
+  - TODO Diagram: Deployment topology and redundancy.
 - Security:
   - Threat model (MFA phishing, SIM swap, device compromise) and mitigations.
     - Hints: Likely attack paths; layered defenses; residual risk and user guidance.
   - Audits, formal verification, bug bounty.
     - Hints: Firms and timelines; scope; bounty tiers; disclosure policy.
+  - TODO Diagram: Trust boundaries and threat model.
 - Privacy and compliance:
   - PII storage, encryption, retention; GDPR/CCPA handling; consent.
     - Hints: Data minimization; encryption keys; DSAR; consent flows.
   - KYC/AML stance, geofencing, reporting obligations.
     - Hints: Triggers; providers; data sharing; restricted regions.
+  - TODO DFD: Personal data flows and consent.
+  - TODO Flowchart: KYC/AML trigger paths (if applicable).
 - Performance:
   - Latency targets, throughput, scalability plan (bundler capacity, queues).
     - Hints: P95/P99 targets; load assumptions; horizontal scaling; backpressure.
+  - TODO Diagram: Queuing/bundling pipeline and capacity planning.
+  - TODO Chart: Latency targets vs. measured P95/P99.
 - Accessibility and i18n:
   - Languages at launch, accessibility standards, offline/low-bandwidth design.
     - Hints: Locales; WCAG level; text size/contrast; caching for poor networks.
+  - TODO Flowchart: Offline/low-bandwidth fallback behavior.
 
 - Transaction safety:
   - Pre-simulation of transactions and human-readable decoding of approvals/transfers.
@@ -150,6 +171,7 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
     - Hints: Heuristic sources; update cadence; false-positive handling.
   - Session approvals, transaction risk scoring, and MEV-safe/private submission.
     - Hints: Score inputs; thresholds; use of private relays; fallback rules.
+  - TODO Flowchart: Simulation and risk scoring pipeline.
 
 - Approvals and allowances:
   - Visualization of existing allowances and prompts for one-time vs. unlimited approvals.
@@ -158,24 +180,29 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
     - Hints: Schedules; triggers; UX entry points; notifications.
   - Allowance risk education and defaults that prefer least privilege.
     - Hints: Tooltips; learn-more; examples of risks and best practice.
+  - TODO State Diagram: Allowance lifecycle (grant → monitor → revoke).
 
 - Multi-device and sessions:
   - Session management, logout-all devices, and session timeouts.
     - Hints: Idle timeouts; device list; single-tap revoke; new device alerts.
   - Key rotation flows; compromised/lost device response procedures.
     - Hints: Step-by-step guide; grace periods; support involvement.
+  - TODO State Diagram: Session lifecycle across devices.
+  - TODO Sequence Diagram: Lost device → recovery.
 
 - Identity and contacts:
   - Contacts/address book, verification status, nicknames, ENS/UD support.
     - Hints: Import sources; deduping; verification badges; privacy choices.
   - Email/handle mapping where applicable; import/export; contact data privacy.
     - Hints: Hashing/pseudonymization; export format; user consent.
+  - TODO ERD: Contacts and identity mappings.
 
 - Developer platform:
   - SDKs/APIs, WalletConnect v2, intents, and extension points.
     - Hints: Supported languages; examples; versioning; deprecation policy.
   - Sandbox permissions, rate limits, and developer onboarding.
     - Hints: App review; keys/quotas; abuse prevention.
+  - TODO Diagram: SDK architecture and permission model.
 
 - Support and operations:
   - Support channels and SLAs; escalation and incident response runbooks.
@@ -203,6 +230,8 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
 - KPI targets by phase (users, MAU, tx/day, revenue, CSAT).
   - Hints: Numeric goals; measurement method; dashboards.
 
+- TODO Timeline: Gantt with milestones and gates; KPI dashboard mock.
+
 ### Vision
 - Long-term mission and what “decentralized bank” means in 3–5 years.
   - Hints: End-state vision; user rights; custody ethos; inclusivity.
@@ -215,6 +244,8 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
 - Ethical guidelines (user rights, privacy, censorship resistance).
   - Hints: Principles; red lines; transparency commitments.
 
+- TODO Chart: Positioning map vs. major wallets (UX simplicity vs. security; cost vs. features).
+
 ### Team & Advisors
 - Founders’ bios and relevant experience.
   - Hints: 3–5 lines each; past wins; domain fit; public links.
@@ -226,6 +257,8 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
   - Hints: Legal structure; reasoning; licensing path; counsel.
 - Token allocations (team/advisors) and vesting terms.
   - Hints: Percentages; cliffs/vesting; lockups; alignment.
+
+- TODO Diagram: Governance transition (multisig → DAO) with timelines.
 
 ### MTX Token — On Ethereum with Total Supply and Decimals
 - ✓ Chain(s) and token standard (ERC‑20, extensions), symbol, decimals.
@@ -251,6 +284,7 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
   - Third‑party audit by Halborn (or comparable tier‑1 firm) prior to launch.
   - Public bug bounty program; phased privilege reduction and potential partial renounce after DAO transition.
 
+- TODO Diagram: Contract architecture (proxy, roles, timelocks) and upgrade process.
 ### MTX Token — Utility
 - Concrete utilities at launch (fee discounts, gas sponsorship access, premium features).
   - Gas sponsorship privileges for MTX stakers; higher caps and lower/zero service fees based on staked amount and lock duration.
@@ -267,6 +301,7 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
 - ✓ Does MTX unlock higher gas sponsor caps or earn/borrow benefits?
   - MTX staking unlocks higher gas sponsor caps and discounted rates via a dedicated staker pool.
 
+- TODO Table: Staking tiers vs. gas sponsor caps/discounts; governance scope overview.
 ### MTX Token — Tokenomics
 - ✓ Initial liquidity:
   - Confirm: 1% of supply deposited to DEX at $0.50 initial price on Uniswap v4 (Ethereum).
@@ -276,6 +311,7 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
     - Fixed supply: 13M MTX; initial circulating ~1% → initial market cap ≈ $6.5M at $0.50.
     - Max circulating after d days: 1% + 0.3% × d (subject to refreeze policy below).
     - Refreeze policy: Foundation may refreeze unlocked tokens to smooth supply and support market health; operations funded transparently from unlocked amounts.
+  - TODO Chart: Initial liquidity configuration and price impact simulation.
 - ✓ Emissions/unlock:
   - Confirm: daily 0.3% of total supply “unfrozen” to Matrix Foundation.
     - On‑chain schedule; no cliff. Minimum effective vesting horizon ≈ 333 days at 0.3%/day.
@@ -287,12 +323,14 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
   - Clear policy for selling to fund ops vs. refreezing; transparency and reporting cadence.
     - All sales/buys executed on‑chain (transparent). Monthly/quarterly reports disclose unlocks, sales, refreezes, and treasury balances.
     - Hints: Triggers; ceilings; monthly reports; wallet disclosures.
+  - TODO Chart: Daily unlock/refreeze over time (stacked area).
 - ✓ Allocations:
   - Foundation, ecosystem, community, team, advisors, market making, reserves.
     - 1% initial LP; remainder held by Foundation and subject to the daily unlock policy.
     - No team or airdrop allocations at launch; any marketing allocations purchased on‑market using company capital to avoid preferential distributions.
     - Market‑making: on‑chain liquidity operations using unlocked amounts for stabilization and insurance; profits accrue to company capital to deepen liquidity or extend runway.
     - Hints: Percentages; lockups; purpose per bucket.
+  - TODO Pie Chart: Token allocation by bucket.
   - Vesting cliffs/schedules; anti-dump protections; lockups for insiders.
     - Anti‑dump measures focus on transparent refreeze capability and liquidity management; monitoring for market manipulation with proportionate responses consistent with decentralization and user rights.
     - Hints: Timelines; transfer restrictions; enforcement.
@@ -300,6 +338,7 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
   - Insurance account vs. profit account definitions, controls, signers, auditability.
     - Revenues split: 50% Insurance Account (market stabilization/buybacks), 50% Profit Account (operations, staking rewards support, market‑making, growth).
     - Hints: Multisig details; access policy; public dashboards.
+  - TODO Flow Diagram: Treasury flows (revenue → insurance/profit → uses).
 - ✓ Staking and rewards:
   - Reward source (revenue share vs. emissions), distribution frequency (block/weekly/monthly).
     - Monthly distributions; paid in MTX and/or stablecoins (USDC/USDT) depending on treasury composition.
@@ -307,14 +346,17 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
     - Hints: Split ratios; schedule; auto-compound; gas costs.
   - Eligibility (stakers only vs. all holders), snapshot mechanism, slashing conditions if any.
     - Minimum stake: 100 MTX (≈0.0008% of supply; ≈0.077% of initial LP float).
+  - TODO Formula: Staking rewards calculation; TODO Chart: APR vs. stake and duration.
 - ✓ Buybacks and burns:
   - Triggers (revenue thresholds, governance votes), execution rules.
     - Buybacks executed opportunistically based on treasury health and market conditions; rules codified in treasury policy and reported transparently.
     - Hints: Conditions; execution venues; transparency.
+  - TODO Flowchart: Buyback/burn decision process.
 - ✓ Compliance:
   - Security vs. utility token stance, jurisdictions, offering status, KYC requirements.
     - Wallet usage and staking do not require KYC by default. In cases of suspected fraud/abuse related to sponsored services or treasury interactions, enhanced verification may be requested to protect the ecosystem.
     - Hints: Legal opinions (if any); countries included/excluded; investor eligibility.
+  - TODO Flowchart: Enhanced verification triggers and handling.
 
 
 ### MTX Token — Market and Revenue Forecast
