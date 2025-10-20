@@ -35,8 +35,13 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
 
 ### Solution Overview
 - What type of wallet is Matrix: non-custodial smart account (AA/4337), EOA, hybrid, or custodial?
+  - EOA, since SmartAccounts and 4337 are new and not fully supported by other platfroms, Matrix Wallet started with the EOA approch, so users have enoph confidence that they own the key and they have full controll while we provided cutting eadge features like gas-sponsor and send by gmail on the same EOA wallet.
+  - Matrix Wallet is published on Google Play and Apple Store, so users can easly install it from trusted sorce without any confution or sicurity risks.
+  - Updates will be published on the same approch. and consist of new features and minor fixes if there is any.
+  - Also our support team, cover 24/7 chat and email support for our customers, and MTX holders have a priority rather than the others.
   - Hints: Tradeoffs (UX vs. trust); upgradeability; standards supported; compliance impact.
 - How do users onboard (email/social signup, OAuth with Google, seedless, social recovery)?
+  - Users onboard only using their gmail TODO Kolang.
   - Hints: Step-by-step flow; fallback paths; recovery setup defaults; bot/Sybil defenses.
 - What makes the UI “grandparent-simple” (flows, language, defaults, accessibility)?
   - Hints: Plain language; safe defaults; large touch targets; WCAG; cognitive load.
