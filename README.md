@@ -267,25 +267,42 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
     - Selling or buying MTX will hapen onchain and fully transparent. 
     - Annoal reports might be available for Fundation expences and Revenue.
     - Hints: Triggers; ceilings; monthly reports; wallet disclosures.
-- Allocations:
+- ✓ Allocations:
   - Foundation, ecosystem, community, team, advisors, market making, reserves.
+    - 1% initial LP for Dex, 
+    - the rest is reserved and will be unlocked minimum 1year based on echosystem benefit. No Airdrop, No Team,
+    - Our Primary Obejective is lead the Platform to success, and we respect our cummunity whom payed for MTX token by not having Airdrop or Team allocation. 
+    - for any marketing use cases the CEO will buy MTX from the DEX itself using Company Capital and can use that MTX as Company deside. No Unfair Allocation.
+    - Market Making will happen onchain, using unlocked ammount for Pump resistance and insurance and Comapny Capital for Dump desistance. 
+    - the Revenue of Market Making will remain in the Company Capital and can be use to increase the Price sustanly, or increase the Market Depth.
     - Hints: Percentages; lockups; purpose per bucket.
   - Vesting cliffs/schedules; anti-dump protections; lockups for insiders.
+    - Comapny will monitor the Market and Identify the Indiser traders powering by AI and Proffessional Financial Experts. once any dangrus activity tracked, the account will be freezed, our support team will cover the account to refund and revert the transactions with small penalty for the first time. 
+    the penalty increases for that account if it happens more.
     - Hints: Timelines; transfer restrictions; enforcement.
-- Treasury and reserves:
+- ✓ Treasury and reserves:
   - Insurance account vs. profit account definitions, controls, signers, auditability.
+    - All the Revenue of System splited into 2 account, 50% Insurance Account, 50% ProfitAccount.
+    - the Insurance Account will only be used for dump resistance and buy backing the MTX token,
+    - While the ProfitAccount can be used for Operational expences, Staking Rewards MTX buy backing, Market Making, or etc. 
     - Hints: Multisig details; access policy; public dashboards.
-- Staking and rewards:
+- ✓ Staking and rewards:
   - Reward source (revenue share vs. emissions), distribution frequency (block/weekly/monthly).
+    - Staking reward distribution happening monthly. it might be based on MTX token, or Stable tokens like USDT or USDC. 
+    - Staking Rewards is also depends on Amount and Duration, 
+    - the Mathematics formula of Staking reward will be included here. TODO: @Harpy-wings
     - Hints: Split ratios; schedule; auto-compound; gas costs.
   - Eligibility (stakers only vs. all holders), snapshot mechanism, slashing conditions if any.
-    - Hints: Min stake; snapshot cadence; penalties.
-- Buybacks and burns:
+    - Min Stake: 100 MTX, ( 0.0008% total Supply and 0.077% of initial LP )
+- ✓ Buybacks and burns:
   - Triggers (revenue thresholds, governance votes), execution rules.
+    - Buybacking is execute based on CEO desigen and market situation.
     - Hints: Conditions; execution venues; transparency.
-- Compliance:
+- ✓ Compliance:
   - Security vs. utility token stance, jurisdictions, offering status, KYC requirements.
+    - While using Matrix Wallet and Staking MTX token is not required any KYC since it's trully decentrilized, in the case of fard or inside treading activity, the KYC is required before we unfreeze the account, to grantee the MTX economy safety and healthy.
     - Hints: Legal opinions (if any); countries included/excluded; investor eligibility.
+
 
 ### MTX Token — Market and Revenue Forecast
 - Revenue drivers and assumptions:
