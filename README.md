@@ -5,34 +5,49 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
 - What single sentence best describes Matrix Wallet’s core value for mass adoption?
   - Hints: One crisp promise; who it's for; key differentiator vs. existing wallets.
 - Who is the primary audience (first-time users, Web3 natives, SMEs, remittance users)?
-  - I dont know the exact word for this, our primary audiance are every person, we want to get mass adoption. 
-    I 
+  - I dont know the exact word for this, our primary audiance are every person, we want to get mass adoption.
   - Hints: Segments, geographies, devices, income bands, compliance needs.
 - What problem do you solve better than existing wallets/banks (onboarding, UX, gas, security)?
+  - UX, Gas, Onboarding, and Security, all. 
   - Hints: Quantify friction today (steps/time/cost); name the top 3 pain points you remove.
 - What are the 3–5 flagship features that make it “a decentralized bank for everyone”?
+  - Fully Decentrilize. 
+  - Easy Transfer, Easy Swap, Easy Earn, Easy Borrow. 
   - Hints: Tie features to outcomes; note what’s novel vs. table stakes; launch readiness.
 - What measurable outcomes do you aim for (e.g., 5M users, <$0.05 effective tx cost, NPS)?
+  - 50M users for the first year, and 5M users for the 6 months from luanch. 
   - Hints: Targets and timeframes; core metrics (MAU, retention, CSAT); baselines.
 - What is the core economic model in one sentence (MTX role, revenue, distribution)?
+  - Our Main Revenue are from Gas Sponsor fee (avg 0.1$ per transfer), Swap fee(avg, $0.5 per swap), 
   - Hints: Revenue sources, MTX utility, how value accrues and distributes; sustainability.
 - What chains and assets are supported at launch?
+  - Bitcoin, Ethereum, Binance Smart Chain, Solana, Tron
+  - top 1000 tokens on Coinmarket cap are supported by default.
   - Hints: Initial chains/L2s; stablecoins; token standards; expansion plan.
 
 - TODO Diagram: Product overview (users, mobile app, relayer/paymaster, networks).
 
 ### Introduction & Problem Statement
 - What specific frictions block mass adoption today (seed phrases, fees, volatility, scams)?
+  - Seed Pharses, 
+  - Native token Fees,
+  - Hard Onboarding Process
   - Hints: Concrete examples; quantify drop-offs; risk and trust barriers for newcomers.
 - What real-world use cases are you targeting first (P2P, remittances, small-business payments)?
+  - P2P transactions, 
   - Hints: Frequency/amounts; TAM; why these users switch; competitor alternatives.
 - Who are your key personas (e.g., “grandfather” user profile) and their top 3 needs?
+  - all Peoples in age of +18, /// DO A DEEP REVEIEW of other wallet personas.
+  -- major needs, Transfer, Swap, Earn, Borrow by order.
   - Hints: Demographics, access to devices/ID, accessibility needs, support expectations.
 - What is broken in “crypto wallets as banks” today (custody, fees, reliability, UX)?
+  - Bad UX, Fees.
   - Hints: Custody risk, hidden fees, outage frequency, UX pitfalls, competitor gaps.
 - What regulatory/trust concerns do target users have and how will you address them?
+  - there is no regulatory from the user side, there is a compliance which user accepts when they are regisitring.
   - Hints: KYC/AML, sanctions, classification risks, disclosures, regional considerations.
 - What success criteria define “solved” (time to first transaction, cost, support responsiveness)?
+  - Success means getting first rank of Wallets by number of users. we aimed 50M users for the first year.
   - Hints: Time-to-first-send, activation rate, support SLA, complaint rate.
 
 - TODO Chart: Adoption funnel (onboard → first send → week 4 retention) and top pain points.
@@ -45,6 +60,7 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
   - 24/7 support via chat and email; MTX holders receive priority routing.
   - Hints: Tradeoffs (UX vs. trust); upgradeability; standards supported; compliance impact.
 - How do users onboard (email/social signup, OAuth with Google, seedless, social recovery)?
+  - Users onboard using Sign in with Google or Sign in with Apple (OAuth). On first login, they set an in‑app password/passcode. A wallet mnemonic is then generated locally on the device and never leaves the device unencrypted. The mnemonic is stored only as an encrypted blob in device secure storage and as a user‑bound cloud backup (iCloud on iOS; Google Drive App Data on Android), encrypted with a key derived from the user’s passcode (hash). Subsequent sessions unlock with the passcode, with optional biometric convenience on supported devices.
   - One‑tap onboarding with Google or Apple sign‑in. After OAuth, the wallet is ready to use.
   - Optional email‑based identity linking to enable Gmail send; seedless UX with secure device binding.
   - Hints: Step-by-step flow; fallback paths; recovery setup defaults; bot/Sybil defenses.
@@ -75,6 +91,7 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
   - User‑selectable scopes: one‑time approvals, limited allowances, or broader allowances where appropriate; clear revoke flows and proactive alerts.
   - Hints: One-time vs. unlimited defaults; revoke flow; proactive alerts; education.
 - What is the multi-device experience (sessions, sync, recovery across devices)?
+  - On a new or reinstalled device, the user signs in with the same Google/Apple account. The app locates and downloads the user’s encrypted backup from the associated cloud provider. The user enters their in‑app passcode; a key derived from this passcode decrypts the backup locally and restores the wallet from the mnemonic. Without the correct passcode, the backup is unusable to anyone else. The mnemonic is never transmitted or stored in plaintext on any server.
   - Single‑active‑device by default for safety, with secure cloud sync enabling recovery on a new device. Passphrase encryption protects keys on a lost device; users can rotate keys and migrate assets after re‑provisioning.
   - Hints: Device binding; session revocation; key sync; lost device recovery.
 - What support/operations guarantees exist (SLA, incident status, transparency)?
@@ -406,3 +423,18 @@ Answer directly under each section (brief bullets are fine). Once filled, we wil
   - Hints: Severity levels; response/resolve targets; comms.
 - Business continuity planning and disaster recovery.
   - Hints: Backup plans; RTO/RPO; drills.
+
+## Slogans
+- Simplicity is Our DNA.
+- Simple Answer to Complex Questions.
+- CFi Experiance in Defi
+
+## other context
+- Open access—no KYC. Zero protocol fees. Zero‑knowledge privacy. Defense‑in‑depth minimizes risk. Instant settlement across networks.
+- 0 KYC Open access—no identity checks or documents required.
+- We have bug bounty program. reffer to website for ditails.
+- We are integrated with Avve for Earn and Borrow, and with wide range of Dex and Bridges for swapp assuring minimum fee.
+- Sending with GMails avoids issue of dealing with complex and un-frindly addresses. 
+- Simple Transfer with QR code or NFC achiving smooth experiance for daily fianace usage.
+- Cload backup 
+
